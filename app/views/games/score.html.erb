@@ -1,0 +1,18 @@
+<h1><%= @letters = @letters.split(" ") %></h1>
+<% submit_word_arr = @submit_word.split("") %>
+<% @letters.each_with_index do |letter, i| %>
+    <% if submit_word_arr.include?(letter) %>
+        <% submit_word_arr.delete(letter) %>
+    <% end %>
+<% end %>
+<% if submit_word_arr.size != 0  %>
+<h1><%= submit_word_arr %></h1>
+<% else %>
+    <p>YEEEEEEEEEEEEEEEEah</p>
+<% end %>
+<% if @bool_valid %>
+<p>TRUUUUUUU</p>
+<% else %>
+<p>FALLLLLLLLLLSE</p>
+<% end %>
+<%= link_to "Try again",new_path  %>
